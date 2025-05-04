@@ -180,6 +180,14 @@ async def send_stats_link(message: types.Message):
         "Agar tugma orqali ochilmasa, havolani brauzerda oching."
     )
 
+@dp.message(lambda message: message.text == "/start")
+async def start_handler(message: types.Message):
+    await message.answer(
+        "👋 Salom! Bu bot kanal statistikasi uchun ishlaydi.\n"
+        "📊 Statistika uchun pastdagi tugmani bosing.",
+        reply_markup=stats_keyboard
+    )
+
 # Botni ishga tushirish
 def main():
     import asyncio
