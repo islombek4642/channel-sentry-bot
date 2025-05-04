@@ -306,7 +306,8 @@ def get_weekly_stats():
 @dp.message(lambda message: message.text == "📊 Statistika")
 async def send_stats_link(message: types.Message):
     await message.answer(
-        "📊 Statistika uchun web-app havolasi:\nhttp://localhost:8501\n\n"
+        "📊 Statistika uchun web-app havolasi:\n"
+        "https://web-production-8de5.up.railway.app\n\n"
         "Agar tugma orqali ochilmasa, havolani brauzerda oching."
     )
 
