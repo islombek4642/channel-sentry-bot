@@ -1,5 +1,5 @@
 import streamlit as st
-from sqlalchemy import create_engine, Column, Integer, String, Text
+from sqlalchemy import create_engine, Column, Integer, String, Text, BigInteger
 from sqlalchemy.orm import declarative_base, sessionmaker
 import pandas as pd
 import os
@@ -26,7 +26,7 @@ Base = declarative_base()
 class Member(Base):
     __tablename__ = 'members'
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer)
+    user_id = Column(BigInteger)
     join_date = Column(String(32))
     source = Column(Text)
 

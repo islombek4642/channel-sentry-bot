@@ -1,12 +1,12 @@
 import logging
 from aiogram import Bot, Dispatcher, types
-from aiogram.types import ChatMemberUpdated, ReplyKeyboardMarkup, KeyboardButton
+from aiogram.types import ChatMemberUpdated, ReplyKeyboardMarkup, KeyboardButton, WebAppInfo
 from datetime import datetime, timedelta
 from dateutil import tz
 from aiogram.utils.markdown import hbold
 import os
 from dotenv import load_dotenv
-from sqlalchemy import create_engine, Column, Integer, String, Text
+from sqlalchemy import create_engine, Column, Integer, String, Text, BigInteger
 from sqlalchemy.orm import declarative_base, sessionmaker
 import sys
 import socket
@@ -43,7 +43,7 @@ Base = declarative_base()
 class Member(Base):
     __tablename__ = 'members'
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer)
+    user_id = Column(BigInteger)
     join_date = Column(String(32))
     source = Column(Text)
 
@@ -59,7 +59,7 @@ dp = Dispatcher()
 # Oddiy reply keyboard (lokal test uchun)
 stats_keyboard = ReplyKeyboardMarkup(
     keyboard=[
-        [KeyboardButton(text="📊 Statistika")]
+        [KeyboardButton(text="📊 Statistika", web_app=WebAppInfo(url="https://web-production-8de5.up.railway.app"))]
     ],
     resize_keyboard=True,
     one_time_keyboard=False
