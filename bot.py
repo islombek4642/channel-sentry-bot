@@ -10,6 +10,7 @@ from sqlalchemy import create_engine, Column, Integer, String, Text
 from sqlalchemy.orm import declarative_base, sessionmaker
 import sys
 import socket
+import pymysql
 
 # Logging sozlash
 log_dir = "logs"
@@ -35,6 +36,7 @@ CHANNEL_ID = int(os.getenv('CHANNEL_ID'))
 MYSQL_URL = os.getenv('MYSQL_URL')
 
 # SQLAlchemy sozlash
+pymysql.install_as_MySQLdb()
 engine = create_engine(MYSQL_URL, echo=False)
 Base = declarative_base()
 

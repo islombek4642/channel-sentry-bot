@@ -5,6 +5,9 @@ import pandas as pd
 import os
 from dotenv import load_dotenv
 from datetime import datetime
+import pymysql
+
+pymysql.install_as_MySQLdb()
 
 st.set_page_config(page_title="Kanal statistikasi", layout="wide")
 st.title("\U0001F4CA Kanal statistikasi")
