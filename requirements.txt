@@ -7,6 +7,5 @@ streamlit>=1.20.0
 sqlalchemy>=2.0.0
 pymysql>=1.0.0
 streamlit-extras==0.3.5
-streamlit-custom-notification-box==0.1.8
 streamlit-option-menu==0.3.12
 streamlit-custom-tabs==0.1.0 
